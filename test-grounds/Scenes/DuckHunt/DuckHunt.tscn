@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://csbu1qkowtqh"]
+
+[ext_resource type="PackedScene" uid="uid://grsb2pa5e6gq" path="res://Scenes/DuckHunt/target_canon.tscn" id="1_spo53"]
+[ext_resource type="Script" uid="uid://kdgjhk5tixwl" path="res://Scenes/DuckHunt/Score.gd" id="2_h7y7q"]
+
+[node name="Node2D" type="Node2D" unique_id=562307607]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1498924769]
+
+[node name="TargetCanon" parent="." unique_id=1851077083 instance=ExtResource("1_spo53")]
+position = Vector2(0, 137)
+
+[node name="GUI" type="CanvasGroup" parent="." unique_id=2100537912]
+
+[node name="Score" type="Node" parent="GUI" unique_id=1651560433]
+script = ExtResource("2_h7y7q")
+
+[node name="Label" type="Label" parent="GUI/Score" unique_id=1632919831]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -871.0
+offset_top = -407.0
+offset_right = -282.0
+offset_bottom = -362.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "10000000000"
+horizontal_alignment = 1

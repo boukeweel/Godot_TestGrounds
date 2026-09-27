@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://grsb2pa5e6gq"]
+
+[ext_resource type="Script" uid="uid://b8ipus5t8yun3" path="res://Scripts/target_canon.gd" id="1_4ldnt"]
+
+[node name="TargetCanon" type="Node2D" unique_id=1851077083]
+script = ExtResource("1_4ldnt")

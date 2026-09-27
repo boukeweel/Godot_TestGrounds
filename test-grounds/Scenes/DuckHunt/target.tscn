@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d06212b7jns3q"]
+
+[ext_resource type="Script" uid="uid://bmd0teub5u5av" path="res://Scripts/target.gd" id="1_4ktmg"]
+[ext_resource type="Texture2D" uid="uid://0nyejdc20nw5" path="res://Sprites/Target.png" id="1_x8o7g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqqn2"]
+radius = 8.75
+
+[node name="Target" type="RigidBody2D" unique_id=126433525]
+script = ExtResource("1_4ktmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1371274264]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_vqqn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1582523767]
+texture_filter = 3
+texture = ExtResource("1_x8o7g")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -26,7 +26,7 @@ func _ready() -> void:
 		xForce = rand.randf_range(-500,-50)
 	else :
 		xForce = rand.randf_range(-250,250)
-	var yForce : float = rand.randf_range(-600,-800)
+	var yForce : float = rand.randf_range(-800,-1000)
 	
 	throw_force = Vector2(xForce,yForce);
 	apply_central_impulse(throw_force)

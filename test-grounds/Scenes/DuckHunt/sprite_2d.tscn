@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dh8xdhe7xo42x"]
+
+[ext_resource type="Texture2D" uid="uid://cqp0lbl3b8xjj" path="res://Sprites/Target-spritesheet.png" id="1_22fln"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=2126437969]
+texture_filter = 3
+texture = ExtResource("1_22fln")

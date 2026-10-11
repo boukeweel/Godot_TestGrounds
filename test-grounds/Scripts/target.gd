@@ -8,6 +8,8 @@ var throw_force: Vector2
 var rand = RandomNumberGenerator.new()
 
 var spawn_position: Vector2
+var TargetPieces : PackedScene = preload("res://Scenes/DuckHunt/target_pieces.tscn")
+
 
 func _ready() -> void:
 	input_pickable = true
@@ -44,4 +46,38 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func Death() -> void :
 	ScoreManager.AddScore()
+	SpawnPieces()
 	queue_free()
+	pass
+	
+func SpawnPieces() -> void: 
+	var baseOffset: int = 16
+	var spread: float = baseOffset * 0.5  # distance from center to each piece's center
+
+	# bottom right, bottom left, top left, top right
+	var directions: Array[Vector2] = [
+		Vector2(1, 1),
+		Vector2(-1, 1),
+		Vector2(-1, -1),
+		Vector2(1, -1),
+	]
+
+	for n in 4:
+		var piece: RigidBody2D = TargetPieces.instantiate()
+		piece.position = position + directions[n] * spread
+
+		var rndMulti : float = rand.randf_range(40,200);
+		var force : Vector2 = directions[n] * rndMulti
+		throw_force = Vector2(force)
+		piece.apply_central_impulse(throw_force)
+		
+
+		var sprite: Sprite2D = piece.get_node("Collider/Sprite2D")
+		sprite.region_enabled = true
+
+		var rect: Rect2 = sprite.region_rect
+		rect.position.x = baseOffset * (n + 1)
+		sprite.region_rect = rect
+
+		get_tree().current_scene.add_child(piece)
+	pass

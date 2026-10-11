@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b3uq7hed5abqv"]
+
+[ext_resource type="Texture2D" uid="uid://cqp0lbl3b8xjj" path="res://Sprites/Target-spritesheet.png" id="1_2saqo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2saqo"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=856250377]
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=2015487300]
+shape = SubResource("CircleShape2D_2saqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Collider" unique_id=230201217]
+texture_filter = 3
+scale = Vector2(2, 2)
+texture = ExtResource("1_2saqo")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)

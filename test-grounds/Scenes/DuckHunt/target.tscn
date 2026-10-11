@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d06212b7jns3q"]
 
 [ext_resource type="Script" uid="uid://bmd0teub5u5av" path="res://Scripts/target.gd" id="1_4ktmg"]
-[ext_resource type="Texture2D" uid="uid://0nyejdc20nw5" path="res://Sprites/Target.png" id="1_x8o7g"]
+[ext_resource type="Texture2D" uid="uid://cqp0lbl3b8xjj" path="res://Sprites/Target-spritesheet.png" id="2_4ktmg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqqn2"]
 radius = 8.75
@@ -15,6 +15,8 @@ shape = SubResource("CircleShape2D_vqqn2")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1582523767]
 texture_filter = 3
-texture = ExtResource("1_x8o7g")
+texture = ExtResource("2_4ktmg")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

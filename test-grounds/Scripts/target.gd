@@ -10,6 +10,8 @@ var rand = RandomNumberGenerator.new()
 var spawn_position: Vector2
 var TargetPieces : PackedScene = preload("res://Scenes/DuckHunt/target_pieces.tscn")
 
+@export var death_sound: AudioStream
+
 
 func _ready() -> void:
 	input_pickable = true
@@ -47,8 +49,17 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func Death() -> void :
 	ScoreManager.AddScore()
 	SpawnPieces()
+	PlayDeathSound();
 	queue_free()
 	pass
+	
+func PlayDeathSound() -> void:
+	var p := AudioStreamPlayer2D.new()
+	p.stream = death_sound
+	p.global_position = global_position
+	get_tree().current_scene.add_child(p)
+	p.finished.connect(p.queue_free)
+	p.play()
 	
 func SpawnPieces() -> void: 
 	var baseOffset: int = 16
@@ -65,6 +76,7 @@ func SpawnPieces() -> void:
 	for n in 4:
 		var piece: RigidBody2D = TargetPieces.instantiate()
 		piece.position = position + directions[n] * spread
+		piece.position.y += 100
 
 		var rndMulti : float = rand.randf_range(40,200);
 		var force : Vector2 = directions[n] * rndMulti

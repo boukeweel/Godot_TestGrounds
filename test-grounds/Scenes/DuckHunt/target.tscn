@@ -2,16 +2,25 @@
 
 [ext_resource type="Script" uid="uid://bmd0teub5u5av" path="res://Scripts/target.gd" id="1_4ktmg"]
 [ext_resource type="Texture2D" uid="uid://cqp0lbl3b8xjj" path="res://Sprites/Target-spritesheet.png" id="2_4ktmg"]
+[ext_resource type="AudioStream" uid="uid://c5hd71s0gwhpr" path="res://Audio/HitSound1.wav" id="2_h047i"]
+[ext_resource type="AudioStream" uid="uid://chc5qbgmjxexs" path="res://Audio/Shoot.wav" id="3_5luqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqqn2"]
-radius = 8.75
+radius = 11.510864
 
 [node name="Target" type="RigidBody2D" unique_id=126433525]
 script = ExtResource("1_4ktmg")
+death_sound = ExtResource("2_h047i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1371274264]
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_vqqn2")
+
+[node name="DestroySound" type="AudioStreamPlayer2D" parent="CollisionShape2D" unique_id=1345103946]
+scale = Vector2(0.25, 0.25)
+stream = ExtResource("3_5luqx")
+pitch_scale = 1.36
+autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1582523767]
 texture_filter = 3

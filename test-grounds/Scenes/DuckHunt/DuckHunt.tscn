@@ -7,8 +7,11 @@
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1498924769]
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D" unique_id=2085252921]
+current = true
+
 [node name="TargetCanon" parent="." unique_id=1851077083 instance=ExtResource("1_spo53")]
-position = Vector2(0, 137)
+position = Vector2(0, 140)
 
 [node name="GUI" type="CanvasGroup" parent="." unique_id=2100537912]
 

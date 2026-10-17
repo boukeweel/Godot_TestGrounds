@@ -5,7 +5,7 @@ var label_original_pos : Vector2
 
 
 func _ready() -> void:
-	label = $Label
+	label = $ScoreLabel
 	label.text = "0";
 	label_original_pos = label.position
 	ScoreManager.Score_Changed.connect(AddScore)

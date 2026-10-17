@@ -40,10 +40,10 @@ func _physics_process(_delta: float) -> void:
 		queue_free()
 
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if (event.is_action_pressed("Shoot")) :
-		Death()
-	pass # Replace with function body.
+#func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#if (event.is_action_pressed("Shoot")) :
+		#Death()
+	#pass # Replace with function body.
 
 
 func Death() -> void :
@@ -78,7 +78,7 @@ func SpawnPieces() -> void:
 		piece.position = position + directions[n] * spread
 		piece.position.y += 100
 
-		var rndMulti : float = rand.randf_range(40,200);
+		var rndMulti : float = rand.randf_range(100,400);
 		var force : Vector2 = directions[n] * rndMulti
 		throw_force = Vector2(force)
 		piece.apply_central_impulse(throw_force)

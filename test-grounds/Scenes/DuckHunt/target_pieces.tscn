@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3uq7hed5abqv"]
 
-[ext_resource type="Script" uid="uid://iukt33dq828x" path="res://Scenes/DuckHunt/target_pieces.gd" id="1_1i66p"]
+[ext_resource type="Script" uid="uid://iukt33dq828x" path="res://Scripts/target_pieces.gd" id="1_1i66p"]
 [ext_resource type="Texture2D" uid="uid://cqp0lbl3b8xjj" path="res://Sprites/Target-spritesheet.png" id="1_2saqo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2saqo"]
@@ -10,6 +10,7 @@ script = ExtResource("1_1i66p")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=2015487300]
 shape = SubResource("CircleShape2D_2saqo")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Collider" unique_id=230201217]
 texture_filter = 3

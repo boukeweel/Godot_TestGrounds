@@ -40,12 +40,15 @@ horizontal_alignment = 1
 
 [node name="Combo" type="Node" parent="GUI" unique_id=223304889]
 script = ExtResource("3_4gji7")
+StartColor = Color(0.2960448, 0.4015575, 0.7281283, 1)
+EndColor = Color(0.5987351, 0.21285662, 0.22462481, 1)
 
 [node name="ComboLabel" type="Label" parent="GUI/Combo" unique_id=149466773]
-offset_left = -554.0
-offset_top = 247.0
-offset_right = -515.0
-offset_bottom = 284.0
+offset_left = -568.0
+offset_top = 186.0
+offset_right = -425.0
+offset_bottom = 317.0
+theme_override_font_sizes/font_size = 16
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1

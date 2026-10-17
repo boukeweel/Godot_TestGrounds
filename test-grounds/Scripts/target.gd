@@ -38,6 +38,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if global_position.distance_to(spawn_position) > max_distance:
 		queue_free()
+		ScoreManager.Missed()
 
 
 #func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
